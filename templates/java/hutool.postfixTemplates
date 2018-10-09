@@ -1,48 +1,30 @@
-## number conversions ##
+## hutool ##
 
-.toBoolean : convert to boolean
-	java.lang.String         →  Boolean.parseBoolean($expr$)
+.tostr : hutool convert to str
+	java.lang.String         →  Convert.toStr($expr$)
 
-.toByte : convert to byte
-	java.lang.String         →  Byte.parseByte($expr$)
-	java.lang.Number         →  $expr$.byteValue()
-	NUMBER                   →  ((byte) ($expr$))
+.toint : hutool convert to int
+	java.lang.String         →  Convert.toInt($expr$)
+	java.lang.Number         →  Convert.toInt($expr$)
+	NUMBER                   →  Convert.toInt($expr$)
 
-.toShort : convert to short
-	java.lang.String         →  Short.parseShort($expr$)
-	java.lang.Number         →  $expr$.shortValue()
-	NUMBER                   →  ((short) ($expr$))
+.blank : hutool is blank
+	java.lang.String →  StrUtil.isBlank($expr$)
 
-.toChar : convert to char
-	java.lang.String         →  $expr$.charAt(0)
-	NUMBER                   →  ((char) ($expr$))
+.notblank : hutool is not blank
+	java.lang.String  →  StrUtil.isNotBlank($expr$)
 
-.toInt : convert to int
-	java.lang.String         →  Integer.parseInt($expr$)
-	java.lang.Number         →  $expr$.intValue()
-	NUMBER                   →  ((int) ($expr$))
+.blankif : hutool is if blank
+	java.lang.String  →  StrUtil.isBlank($expr$)
 
-.toLong : convert to long
-	java.lang.String         →  Long.parseLong($expr$)
-	java.lang.Number         →  $expr$.longValue()
-	NUMBER                   →  ((long) ($expr$))
+.notif : hutool is if not blank
+	java.lang.String  →  StrUtil.isNotBlank($expr$)
 
-.toFloat : convert to float
-	java.lang.String         →  Float.parseFloat($expr$)
-	java.lang.Number         →  $expr$.floatValue()
-	NUMBER                   →  ((float) ($expr$))
+.rmo : return Msg.ok
+    java.lang.Object         →  return Msg.ok($expr$);
 
-.toDouble : convert to double
-	java.lang.String         →  Double.parseDouble($expr$)
-	java.lang.Number         →  $expr$.doubleValue()
-	NUMBER                   →  ((double) ($expr$))
+.rme : return Msg.error
+    java.lang.Object         →  return Msg.error($expr$);
 
-.format : format number
-	BYTE                     →  String.format("$format::"%d"$", $expr$)
-	SHORT                    →  String.format("$format::"%d"$", $expr$)
-	CHAR                     →  String.format("$format::"%c"$", $expr$)
-	INT                      →  String.format("$format::"%d"$", $expr$)
-	LONG                     →  String.format("$format::"%d"$", $expr$)
-	FLOAT                    →  String.format("$format::"%f"$", $expr$)
-	DOUBLE                   →  String.format("$format::"%f"$", $expr$)
-	java.lang.String         →  String.format($expr$, $END$)
+.as : to Array
+	ARRAY [java.util.Arrays]  →  Arrays.asList($expr$)
