@@ -1,5 +1,6 @@
 ## hutool ##
-
+## https://raw.githubusercontent.com/zengyufei/customPostfixTemplates/master/templates/java/hutool.postfixTemplates ##
+## %USERPROFILE%/.IntelliJIdea2018.2\config\plugins\custom-postfix-templates_templates\templates\java ##
 
 ## Convert ##
 .str : hutool convert to str
@@ -9,51 +10,57 @@
 .int : hutool convert to int
     java.lang.Object [cn.hutool.core.util.StrUtil]  →  Convert.toInt($expr$)
 	java.lang.String [cn.hutool.core.util.StrUtil]  →  Convert.toInt($expr$)
-	java.lang.Number [cn.hutool.core.util.StrUtil]  →  Convert.toInt($expr$)
 	NUMBER           [cn.hutool.core.util.StrUtil]  →  Convert.toInt($expr$)
     
 .bool : hutool convert to bool
     java.lang.Object [cn.hutool.core.util.StrUtil]  →  Convert.toBool($expr$)
 	java.lang.String [cn.hutool.core.util.StrUtil]  →  Convert.toBool($expr$)
-	java.lang.Number [cn.hutool.core.util.StrUtil]  →  Convert.toBool($expr$)
 	NUMBER           [cn.hutool.core.util.StrUtil]  →  Convert.toBool($expr$)
 
 ## String ##
 
-.bl : hutool is blank
+.null : hutool is blank
+    java.lang.Object [cn.hutool.core.util.ObjectUtil]  →  ObjectUtil.isNull($expr$)
 	java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.isBlank($expr$)
 
-.nbl : hutool is not blank
+.nn : hutool is not blank
+    java.lang.Object [cn.hutool.core.util.ObjectUtil]  →  ObjectUtil.isNotNull($expr$)
 	java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.isNotBlank($expr$)
 
-.ifbl : hutool is if blank
+.ifnull : hutool is if blank
+	java.lang.String [cn.hutool.core.util.ObjectUtil]  →   if (ObjectUtil.isNull($expr$)) {\
+                                                                                    $END$\
+                                                                                }
 	java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isBlank($expr$)) {\
                                                                                     $END$\
-                                                                                };
+                                                                                }
                                                                                 
-.ifnbl : hutool is if not blank
+.ifnn : hutool is if not blank
+	java.lang.String [cn.hutool.core.util.ObjectUtil]  →   if (ObjectUtil.isNull($expr$)) {\
+                                                                                    $END$\
+                                                                                }
 	java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isNotBlank($expr$)) {\
                                                                                     $END$\
-                                                                                };
+                                                                                }
 
-.format : hutool is format
+.fm : hutool is format
 	java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.format($expr$, $END$)
 
-.equals : hutool is equals
+.eq : hutool is equals
 	java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.equalsIgnoreCase($expr$, $END$)
     
-.btd : hutool is blankToDefault
+.bd : hutool is blankToDefault
 	java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.blankToDefault($expr$, $END$)
     
 ## Collection ##
 
-.em : hutool is empty
+.null : hutool is empty
 	ARRAY [cn.hutool.core.util.ArrayUtil]  →  ArrayUtil.isEmpty($expr$)
-	java.lang.Iterable [java.util.Collection]  →  CollUtil.isEmpty($expr$)
+	java.util.Collection [cn.hutool.core.collection.CollUtil]  →  CollUtil.isEmpty($expr$)
 	java.lang.Iterable [cn.hutool.core.collection.CollUtil]  →  CollUtil.isEmpty($expr$)
 	java.util.Map [cn.hutool.core.map.MapUtil]  →  MapUtil.isEmpty($expr$)
 
-.nem : hutool is not empty
+.nn : hutool is not empty
 	ARRAY [cn.hutool.core.util.ArrayUtil]  →  ArrayUtil.isNotEmpty($expr$)
 	java.util.Collection [cn.hutool.core.collection.CollUtil]  →  CollUtil.isNotEmpty($expr$)
 	java.lang.Iterable [cn.hutool.core.collection.CollUtil]  →  CollUtil.isNotEmpty($expr$)
