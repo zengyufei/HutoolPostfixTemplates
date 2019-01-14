@@ -1,30 +1,61 @@
 ## hutool ##
 
-.tostr : hutool convert to str
-	java.lang.String         →  Convert.toStr($expr$)
 
-.toint : hutool convert to int
-	java.lang.String         →  Convert.toInt($expr$)
-	java.lang.Number         →  Convert.toInt($expr$)
-	NUMBER                   →  Convert.toInt($expr$)
+## Convert ##
+.str : hutool convert to str
+    java.lang.Object [cn.hutool.core.util.StrUtil]  →  Convert.toStr($expr$)
+	java.lang.String [cn.hutool.core.util.StrUtil]  →  Convert.toStr($expr$)
 
-.blank : hutool is blank
-	java.lang.String →  StrUtil.isBlank($expr$)
+.int : hutool convert to int
+    java.lang.Object [cn.hutool.core.util.StrUtil]  →  Convert.toInt($expr$)
+	java.lang.String [cn.hutool.core.util.StrUtil]  →  Convert.toInt($expr$)
+	java.lang.Number [cn.hutool.core.util.StrUtil]  →  Convert.toInt($expr$)
+	NUMBER           [cn.hutool.core.util.StrUtil]  →  Convert.toInt($expr$)
+    
+.bool : hutool convert to bool
+    java.lang.Object [cn.hutool.core.util.StrUtil]  →  Convert.toBool($expr$)
+	java.lang.String [cn.hutool.core.util.StrUtil]  →  Convert.toBool($expr$)
+	java.lang.Number [cn.hutool.core.util.StrUtil]  →  Convert.toBool($expr$)
+	NUMBER           [cn.hutool.core.util.StrUtil]  →  Convert.toBool($expr$)
 
-.notblank : hutool is not blank
-	java.lang.String  →  StrUtil.isNotBlank($expr$)
+## String ##
 
-.blankif : hutool is if blank
-	java.lang.String  →  StrUtil.isBlank($expr$)
+.bl : hutool is blank
+	java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.isBlank($expr$)
 
-.notif : hutool is if not blank
-	java.lang.String  →  StrUtil.isNotBlank($expr$)
+.nbl : hutool is not blank
+	java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.isNotBlank($expr$)
 
-.rmo : return Msg.ok
-    java.lang.Object         →  return Msg.ok($expr$);
+.ifbl : hutool is if blank
+	java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isBlank($expr$)) {\
+                                                                                    $END$\
+                                                                                };
+                                                                                
+.ifnbl : hutool is if not blank
+	java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isNotBlank($expr$)) {\
+                                                                                    $END$\
+                                                                                };
 
-.rme : return Msg.error
-    java.lang.Object         →  return Msg.error($expr$);
+.format : hutool is format
+	java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.format($expr$, $END$)
 
-.as : to Array
-	ARRAY [java.util.Arrays]  →  Arrays.asList($expr$)
+.equals : hutool is equals
+	java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.equalsIgnoreCase($expr$, $END$)
+    
+.btd : hutool is blankToDefault
+	java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.blankToDefault($expr$, $END$)
+    
+## Collection ##
+
+.em : hutool is empty
+	ARRAY [cn.hutool.core.util.ArrayUtil]  →  ArrayUtil.isEmpty($expr$)
+	java.lang.Iterable [java.util.Collection]  →  CollUtil.isEmpty($expr$)
+	java.lang.Iterable [cn.hutool.core.collection.CollUtil]  →  CollUtil.isEmpty($expr$)
+	java.util.Map [cn.hutool.core.map.MapUtil]  →  MapUtil.isEmpty($expr$)
+
+.nem : hutool is not empty
+	ARRAY [cn.hutool.core.util.ArrayUtil]  →  ArrayUtil.isNotEmpty($expr$)
+	java.util.Collection [cn.hutool.core.collection.CollUtil]  →  CollUtil.isNotEmpty($expr$)
+	java.lang.Iterable [cn.hutool.core.collection.CollUtil]  →  CollUtil.isNotEmpty($expr$)
+	java.util.Map [cn.hutool.core.map.MapUtil]  →  MapUtil.isNotEmpty($expr$)
+    
