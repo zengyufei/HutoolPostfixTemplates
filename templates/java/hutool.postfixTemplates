@@ -28,7 +28,7 @@
 	java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.isNotBlank($expr$)
 
 .ifnull : hutool is if blank
-	java.lang.String [cn.hutool.core.util.ObjectUtil]  →   if (ObjectUtil.isNull($expr$)) {\
+	java.lang.Object [cn.hutool.core.util.ObjectUtil]  →   if (ObjectUtil.isNull($expr$)) {\
                                                                                     $END$\
                                                                                 }
 	java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isBlank($expr$)) {\
@@ -36,7 +36,7 @@
                                                                                 }
                                                                                 
 .ifnn : hutool is if not blank
-	java.lang.String [cn.hutool.core.util.ObjectUtil]  →   if (ObjectUtil.isNull($expr$)) {\
+	java.lang.Object [cn.hutool.core.util.ObjectUtil]  →   if (ObjectUtil.isNull($expr$)) {\
                                                                                     $END$\
                                                                                 }
 	java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isNotBlank($expr$)) {\
