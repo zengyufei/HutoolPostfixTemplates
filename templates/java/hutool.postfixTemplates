@@ -4,42 +4,29 @@
 
 ## Convert ##
 .str : hutool convert to str
-    java.lang.Object [cn.hutool.core.util.StrUtil]  →  Convert.toStr($expr$)
-	java.lang.String [cn.hutool.core.util.StrUtil]  →  Convert.toStr($expr$)
+    ANY [cn.hutool.core.util.StrUtil]  →  Convert.toStr($expr$)
 
 .int : hutool convert to int
-    java.lang.Object [cn.hutool.core.util.StrUtil]  →  Convert.toInt($expr$)
-	java.lang.String [cn.hutool.core.util.StrUtil]  →  Convert.toInt($expr$)
-	NUMBER           [cn.hutool.core.util.StrUtil]  →  Convert.toInt($expr$)
+    ANY [cn.hutool.core.util.StrUtil]  →  Convert.toInt($expr$)
     
 .bool : hutool convert to bool
-    java.lang.Object [cn.hutool.core.util.StrUtil]  →  Convert.toBool($expr$)
-	java.lang.String [cn.hutool.core.util.StrUtil]  →  Convert.toBool($expr$)
-	NUMBER           [cn.hutool.core.util.StrUtil]  →  Convert.toBool($expr$)
+    ANY [cn.hutool.core.util.StrUtil]  →  Convert.toBool($expr$)
 
 ## String ##
 
 .null : hutool is blank
 	java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.isBlank($expr$)
-    java.lang.Object [cn.hutool.core.util.ObjectUtil]  →  ObjectUtil.isNull($expr$)
 
 .nn : hutool is not blank
 	java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.isNotBlank($expr$)
-    java.lang.Object [cn.hutool.core.util.ObjectUtil]  →  ObjectUtil.isNotNull($expr$)
 
 .ifnull : hutool is if blank
 	java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isBlank($expr$)) {\
                                                                                     $END$\
                                                                                 }
-	java.lang.Object [cn.hutool.core.util.ObjectUtil]  →   if (ObjectUtil.isNull($expr$)) {\
-                                                                                    $END$\
-                                                                                }
                                                                                 
 .ifnn : hutool is if not blank
 	java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isNotBlank($expr$)) {\
-                                                                                    $END$\
-                                                                                }
-	java.lang.Object [cn.hutool.core.util.ObjectUtil]  →   if (ObjectUtil.isNull($expr$)) {\
                                                                                     $END$\
                                                                                 }
 
