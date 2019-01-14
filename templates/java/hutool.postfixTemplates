@@ -20,26 +20,26 @@
 ## String ##
 
 .null : hutool is blank
-    java.lang.Object [cn.hutool.core.util.ObjectUtil]  →  ObjectUtil.isNull($expr$)
 	java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.isBlank($expr$)
+    java.lang.Object [cn.hutool.core.util.ObjectUtil]  →  ObjectUtil.isNull($expr$)
 
 .nn : hutool is not blank
-    java.lang.Object [cn.hutool.core.util.ObjectUtil]  →  ObjectUtil.isNotNull($expr$)
 	java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.isNotBlank($expr$)
+    java.lang.Object [cn.hutool.core.util.ObjectUtil]  →  ObjectUtil.isNotNull($expr$)
 
 .ifnull : hutool is if blank
-	java.lang.Object [cn.hutool.core.util.ObjectUtil]  →   if (ObjectUtil.isNull($expr$)) {\
+	java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isBlank($expr$)) {\
                                                                                     $END$\
                                                                                 }
-	java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isBlank($expr$)) {\
+	java.lang.Object [cn.hutool.core.util.ObjectUtil]  →   if (ObjectUtil.isNull($expr$)) {\
                                                                                     $END$\
                                                                                 }
                                                                                 
 .ifnn : hutool is if not blank
-	java.lang.Object [cn.hutool.core.util.ObjectUtil]  →   if (ObjectUtil.isNull($expr$)) {\
+	java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isNotBlank($expr$)) {\
                                                                                     $END$\
                                                                                 }
-	java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isNotBlank($expr$)) {\
+	java.lang.Object [cn.hutool.core.util.ObjectUtil]  →   if (ObjectUtil.isNull($expr$)) {\
                                                                                     $END$\
                                                                                 }
 
@@ -55,14 +55,14 @@
 ## Collection ##
 
 .null : hutool is empty
+	java.util.Map [cn.hutool.core.map.MapUtil]  →  MapUtil.isEmpty($expr$)
 	ARRAY [cn.hutool.core.util.ArrayUtil]  →  ArrayUtil.isEmpty($expr$)
 	java.util.Collection [cn.hutool.core.collection.CollUtil]  →  CollUtil.isEmpty($expr$)
 	java.lang.Iterable [cn.hutool.core.collection.CollUtil]  →  CollUtil.isEmpty($expr$)
-	java.util.Map [cn.hutool.core.map.MapUtil]  →  MapUtil.isEmpty($expr$)
 
 .nn : hutool is not empty
+	java.util.Map [cn.hutool.core.map.MapUtil]  →  MapUtil.isNotEmpty($expr$)
 	ARRAY [cn.hutool.core.util.ArrayUtil]  →  ArrayUtil.isNotEmpty($expr$)
 	java.util.Collection [cn.hutool.core.collection.CollUtil]  →  CollUtil.isNotEmpty($expr$)
 	java.lang.Iterable [cn.hutool.core.collection.CollUtil]  →  CollUtil.isNotEmpty($expr$)
-	java.util.Map [cn.hutool.core.map.MapUtil]  →  MapUtil.isNotEmpty($expr$)
     
