@@ -16,9 +16,14 @@
 
 .bl : hutool is blank
     java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.isBlank($expr$)
+    java.lang.Object [cn.hutool.core.util.StrUtil]  →  StrUtil.isBlank($expr$)
 
 .blif : hutool is if blank
     java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isBlank($expr$)) {\
+                                                                                    $END$\
+                                                                                }
+
+    java.lang.Object [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isBlank($expr$)) {\
                                                                                     $END$\
                                                                                 }
 
@@ -26,20 +31,31 @@
     java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isBlank($expr$)) {\
                                                                                     $END$\
                                                                                 }
+    java.lang.Object [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isBlank($expr$)) {\
+                                                                                    $END$\
+                                                                                }
 
 .nbl : hutool is not blank
     java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.isNotBlank($expr$)
+    java.lang.Object [cn.hutool.core.util.StrUtil]  →  StrUtil.isNotBlank($expr$)
 
 .nblif : hutool is if not blank
     java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isNotBlank($expr$)) {\
                                                                                     $END$\
                                                                                 }
+    java.lang.Object [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isNotBlank($expr$)) {\
+                                                                                    $END$\
+                                                                                }
 
 .bln : hutool is not blank
     java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.isNotBlank($expr$)
+    java.lang.Object [cn.hutool.core.util.StrUtil]  →  StrUtil.isNotBlank($expr$)
 
 .blnif : hutool is if not blank
     java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isNotBlank($expr$)) {\
+                                                                                    $END$\
+                                                                                }
+    java.lang.Object [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isNotBlank($expr$)) {\
                                                                                     $END$\
                                                                                 }
 
@@ -47,21 +63,29 @@
     java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isNotBlank($expr$)) {\
                                                                                     $END$\
                                                                                 }
+    java.lang.Object [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isNotBlank($expr$)) {\
+                                                                                    $END$\
+                                                                                }
 
 .fm : hutool is format
     java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.format($expr$, $END$)
 
 .eq : hutool is equals
-    java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.equalsIgnoreCase($expr$, $END$)
+    java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.equals($expr$, "$END$")
+    java.lang.Object [cn.hutool.core.util.StrUtil]  →  StrUtil.equals($expr$, "$END$")
+
+.eqi : hutool is equalsIgnoreCase
+    java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.equalsIgnoreCase($expr$, "$END$")
+    java.lang.Object [cn.hutool.core.util.StrUtil]  →  StrUtil.equalsIgnoreCase($expr$, "$END$")
     
 .bd : hutool is blankToDefault
-    java.lang.String [cn.hutool.core.util.StrUtil]  →  $expr$ = StrUtil.blankToDefault($expr$, $END$);
+    java.lang.String [cn.hutool.core.util.StrUtil]  →  $expr$ = StrUtil.blankToDefault($expr$, "$END$");
 
 .ne : hutool is nullToEmpty
     java.lang.String [cn.hutool.core.util.StrUtil]  →  $expr$ = StrUtil.nullToEmpty($expr$);
 
 .sp : hutool is nullToEmpty
-    java.lang.String [cn.hutool.core.util.StrUtil]  →  String[] $expr$s = StrUtil.split($expr$, $END$);
+    java.lang.String [cn.hutool.core.util.StrUtil]  →  String[] $expr$s = StrUtil.split($expr$, "$END$");
     
 ## Collection ##
 
