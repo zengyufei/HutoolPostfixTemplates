@@ -57,6 +57,13 @@
     java.lang.Object [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isNotBlank((String) $expr$)) {\
                                                                                     $END$\
                                                                                 }
+.nnif : hutool is if not blank
+    java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isNotBlank($expr$)) {\
+                                                                                    $END$\
+                                                                                }
+    java.lang.Object [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isNotBlank((String) $expr$)) {\
+                                                                                    $END$\
+                                                                                }
 
 .bln : hutool is not blank
     java.lang.String [cn.hutool.core.util.StrUtil]  →  StrUtil.isNotBlank($expr$)
@@ -71,6 +78,14 @@
                                                                                 }
 
 .ifnbl : hutool is if not blank
+    java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isNotBlank($expr$)) {\
+                                                                                    $END$\
+                                                                                }
+    java.lang.Object [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isNotBlank((String) $expr$)) {\
+                                                                                    $END$\
+                                                                                }
+
+.ifnn : hutool is if not blank
     java.lang.String [cn.hutool.core.util.StrUtil]  →   if (StrUtil.isNotBlank($expr$)) {\
                                                                                     $END$\
                                                                                 }
@@ -174,8 +189,35 @@
     java.lang.Iterable [cn.hutool.core.collection.CollUtil]  →   if (CollUtil.isNotEmpty($expr$)) {\
                                                                                     $END$\
                                                                                 }
+.nnif : hutool is if not empty
+    java.util.Map [cn.hutool.core.map.MapUtil]  →   if (MapUtil.isNotEmpty($expr$)) {\
+                                                                                    $END$\
+                                                                                }
+    ARRAY [cn.hutool.core.util.ArrayUtil]  →   if (ArrayUtil.isNotEmpty($expr$)) {\
+                                                                                    $END$\
+                                                                                }
+    java.util.Collection [cn.hutool.core.collection.CollUtil]  →   if (CollUtil.isNotEmpty($expr$)) {\
+                                                                                    $END$\
+                                                                                }
+    java.lang.Iterable [cn.hutool.core.collection.CollUtil]  →   if (CollUtil.isNotEmpty($expr$)) {\
+                                                                                    $END$\
+                                                                                }
 
 .ifnem : hutool is if not empty
+    java.util.Map [cn.hutool.core.map.MapUtil]  →   if (MapUtil.isNotEmpty($expr$)) {\
+                                                                                    $END$\
+                                                                                }
+    ARRAY [cn.hutool.core.util.ArrayUtil]  →   if (ArrayUtil.isNotEmpty($expr$)) {\
+                                                                                    $END$\
+                                                                                }
+    java.util.Collection [cn.hutool.core.collection.CollUtil]  →   if (CollUtil.isNotEmpty($expr$)) {\
+                                                                                    $END$\
+                                                                                }
+    java.lang.Iterable [cn.hutool.core.collection.CollUtil]  →   if (CollUtil.isNotEmpty($expr$)) {\
+                                                                                    $END$\
+                                                                                }
+
+.ifnn : hutool is if not empty
     java.util.Map [cn.hutool.core.map.MapUtil]  →   if (MapUtil.isNotEmpty($expr$)) {\
                                                                                     $END$\
                                                                                 }
