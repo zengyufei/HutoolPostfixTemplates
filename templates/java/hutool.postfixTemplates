@@ -264,6 +264,11 @@
 
 
 ## Console.log ##
+.cl : Console out
+    ANY [cn.hutool.core.lang.Console]  →  Console.log("$expr$: {}", $expr$);
+.out : Console out
+    ANY [cn.hutool.core.lang.Console]  →  Console.log("$expr$: {}", $expr$);
+.con : Console out
     ANY [cn.hutool.core.lang.Console]  →  Console.log("$expr$: {}", $expr$);
 
     
