@@ -5,19 +5,19 @@
 ## Convert ##
 .str : hutool convert to str
     java.lang.String [cn.hutool.core.convert.Convert]  →  Convert.toStr($expr$)
-    java.lang.Object [cn.hutool.core.convert.Convert]  →  Convert.toStr((String) $expr$)
+    java.lang.Object [cn.hutool.core.convert.Convert]  →  Convert.toStr($expr$)
 
 .int : hutool convert to int
     java.lang.String [cn.hutool.core.convert.Convert]  →  Convert.toInt($expr$, 0)
-    java.lang.Object [cn.hutool.core.convert.Convert]  →  Convert.toInt((String) $expr$, 0)
+    java.lang.Object [cn.hutool.core.convert.Convert]  →  Convert.toInt($expr$, 0)
 
 .long : hutool convert to int
     java.lang.String [cn.hutool.core.convert.Convert]  →  Convert.toLong($expr$, 0L)
-    java.lang.Object [cn.hutool.core.convert.Convert]  →  Convert.toLong((String) $expr$, 0L)
+    java.lang.Object [cn.hutool.core.convert.Convert]  →  Convert.toLong($expr$, 0L)
     
 .bool : hutool convert to bool
     java.lang.String [cn.hutool.core.convert.Convert]  →  Convert.toBool($expr$, false)
-    java.lang.Object [cn.hutool.core.convert.Convert]  →  Convert.toBool((String) $expr$, false)
+    java.lang.Object [cn.hutool.core.convert.Convert]  →  Convert.toBool($expr$, false)
 
 ## String ##
 
